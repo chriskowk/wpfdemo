@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFDemo.Controls;
 using WPFDemo.Data;
 
 namespace WPFDemo
@@ -94,6 +96,13 @@ namespace WPFDemo
         private void UpdateProgressBar(ProgressBar pb, int val)
         {
             pb.Value = val;
+        }
+
+        private void MultiCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ObservableCollection<MultiComboBox.MultiCbxBaseData> context = MultiCmb.ItemsSource as ObservableCollection<MultiComboBox.MultiCbxBaseData>;
+            string s = string.Join(";", context.Where(a => a.IsCheck));
+            Debug.Print(s);
         }
     }
 }

@@ -96,7 +96,7 @@
                             <ComboBoxItem Content="广州" ></ComboBoxItem>
                         </ComboBox>
 
-                        <controls:MultiComboBox x:Name="MultiCmb" Margin="10" Width="200"/>
+                        <controls:MultiComboBox x:Name="MultiCmb" Margin="10" Width="200" SelectionChanged="MultiCmb_SelectionChanged"/>
                     </WrapPanel>
 
                 </TabItem>

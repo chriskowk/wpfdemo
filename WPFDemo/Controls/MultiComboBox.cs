@@ -129,6 +129,11 @@ namespace WPFDemo.Controls
                 get { return _isCheck; }
                 set { _isCheck = value; }
             }
+
+            public override string ToString()
+            {
+                return this.ViewName;
+            }
         }
     }
 }
